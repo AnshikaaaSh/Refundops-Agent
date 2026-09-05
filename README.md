@@ -1,3 +1,14 @@
+---
+title: refundops-agent
+emoji: ⚖️
+colorFrom: yellow
+colorTo: orange
+sdk: streamlit
+sdk_version: 1.62.0
+app_file: app.py
+pinned: false
+---
+
 # refundops-agent: Multi-Agent Payment Dispute Resolution System
 
 A production-ready payment dispute resolution agent built with **LangChain**, **LangGraph**, **Gemini API**, and **Streamlit**. This system automates refund decisions using multi-agent orchestration, policy retrieval via RAG, and deterministic safety guardrails.

@@ -17,6 +17,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+if not os.path.exists("data/transactions.json") or not os.path.exists("data/policy_docs"):
+    import setup_data
+
+    setup_data.main()
+
 from graph import run_dispute_resolution
 
 # Configure page
