@@ -2,7 +2,7 @@
 title: refundops-agent
 emoji: ⚖️
 colorFrom: yellow
-colorTo: orange
+colorTo: red
 sdk: streamlit
 sdk_version: 1.62.0
 app_file: app.py
