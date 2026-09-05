@@ -17,6 +17,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# On Streamlit Community Cloud, secrets come from st.secrets, not a .env file or
+# the process environment directly — bridge it into os.environ so the rest of
+# the app (which reads GOOGLE_API_KEY via os.getenv) works unchanged.
+if not os.getenv("GOOGLE_API_KEY"):
+    try:
+        if "GOOGLE_API_KEY" in st.secrets:
+            os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+    except Exception:
+        pass
+
 if not os.path.exists("data/transactions.json") or not os.path.exists("data/policy_docs"):
     import setup_data
 
